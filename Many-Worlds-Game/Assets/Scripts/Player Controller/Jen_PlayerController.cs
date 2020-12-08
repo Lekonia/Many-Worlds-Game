@@ -32,5 +32,17 @@ public class Jen_PlayerController : MonoBehaviour
                 // Stop focusing any objects
             }
         }
+
+        if(Input.GetMouseButtonDown(1))
+        {
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit, 100))
+            {
+                // Check if we hit an interactable
+                // If we did set it as our focus
+            }
+        }
     }
 }
