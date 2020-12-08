@@ -18,4 +18,9 @@ public class Jen_PlayerMotor : MonoBehaviour
     {
         agent.SetDestination(point);
     }
+
+    public void FollowTarget (Jen_Interactable newTarget)
+    {
+
+    }
 }
