@@ -5,6 +5,9 @@ using UnityEngine;
 [RequireComponent(typeof(Jen_PlayerMotor))]
 public class Jen_PlayerController : MonoBehaviour
 {
+
+    public Jen_Interactable focus;
+
     public LayerMask movementMask;
 
     Camera cam;
@@ -29,7 +32,7 @@ public class Jen_PlayerController : MonoBehaviour
             {
                 motor.MoveToPoint(hit.point);
 
-                // Stop focusing any objects
+                RemoveFocus();
             }
         }
 
@@ -40,9 +43,36 @@ public class Jen_PlayerController : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, 100))
             {
-                // Check if we hit an interactable
-                // If we did set it as our focus
+                Jen_Interactable interactable = hit.collider.GetComponent<Jen_Interactable>();
+                if (interactable != null)
+                {
+                    SetFocus(interactable);
+                }
             }
         }
+    }
+
+    void SetFocus (Jen_Interactable newFocus)
+    {
+        if (newFocus != focus)
+        {
+            if (focus != null)
+                focus.OnDefocused();
+
+            focus = newFocus;
+            motor.FollowTarget(newFocus);
+        }
+        
+        newFocus.OnFocused(transform);
+
+    }
+
+    void RemoveFocus()
+    {
+        if (focus != null)
+            focus.OnDefocused();
+        
+        focus = null;
+        motor.StopFollowingTarget();
     }
 }
