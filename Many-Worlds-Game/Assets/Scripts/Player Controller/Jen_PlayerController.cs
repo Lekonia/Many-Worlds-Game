@@ -55,10 +55,12 @@ public class Jen_PlayerController : MonoBehaviour
     void SetFocus (Jen_Interactable newFocus)
     {
         focus = newFocus;
+        motor.FollowTarget(newFocus);
     }
 
     void RemoveFocus()
     {
         focus = null;
+        motor.StopFollowingTarget();
     }
 }
