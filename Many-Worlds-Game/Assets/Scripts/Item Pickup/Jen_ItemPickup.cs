@@ -2,6 +2,7 @@
 
 public class Jen_ItemPickup : Jen_Interactable
 {
+    public Jen_Item item;
     public override void Interact()
     {
         base.Interact();
@@ -11,7 +12,7 @@ public class Jen_ItemPickup : Jen_Interactable
 
     void Pickup()
     {
-        Debug.Log("Picking up item.");
+        Debug.Log("Picking up item." + item.name);
         // Add to inventory
         Destroy(gameObject);
     }
