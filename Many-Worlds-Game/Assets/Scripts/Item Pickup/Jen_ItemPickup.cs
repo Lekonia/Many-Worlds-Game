@@ -13,7 +13,9 @@ public class Jen_ItemPickup : Jen_Interactable
     void Pickup()
     {
         Debug.Log("Picking up item." + item.name);
-        // Add to inventory
-        Destroy(gameObject);
+        bool wasPickedUp = Jen_Inventory.instance.Add(item);
+        
+        if (wasPickedUp)
+            Destroy(gameObject);
     }
 }

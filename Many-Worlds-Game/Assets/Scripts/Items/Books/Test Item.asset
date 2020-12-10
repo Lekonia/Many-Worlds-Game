@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f99e4ac32a2c964d9184f56bb8ce60b, type: 3}
   m_Name: Test Item
   m_EditorClassIdentifier: 
-  name: New Item
+  name: Book of the Beginning
   icon: {fileID: 0}
   isDefaultItem: 0
