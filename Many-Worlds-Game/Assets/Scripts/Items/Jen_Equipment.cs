@@ -9,6 +9,13 @@ public class Jen_Equipment : Jen_Item
 
     public int armourModifier;
     public int damageModifier;
+
+    public override void Use()
+    {
+        base.Use();
+        // Equip the item
+        // Remove it from the inventory
+    }
 }
 
 public enum EquipmentSlot { Head, Chest, Legs, Weapon, Shield, Feet }
