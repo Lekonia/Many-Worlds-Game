@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Shield of Kat
   m_EditorClassIdentifier: 
   name: Shield of Tamsin
-  icon: {fileID: 21300000, guid: 0f6a9e732508db1438dd94967d297445, type: 3}
+  icon: {fileID: 21300000, guid: b97c91e8b348f3f4ebdc11f5c82182cd, type: 3}
   isDefaultItem: 0

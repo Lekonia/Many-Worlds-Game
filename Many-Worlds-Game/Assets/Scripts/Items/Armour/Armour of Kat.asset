@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Armour of Kat
   m_EditorClassIdentifier: 
   name: Armour of Alania
-  icon: {fileID: 21300000, guid: 6b4f1172b29288748bf35a4e5abfea68, type: 3}
+  icon: {fileID: 21300000, guid: 2f1eaeeaad36ee5469eff7ff158f37ba, type: 3}
   isDefaultItem: 0
