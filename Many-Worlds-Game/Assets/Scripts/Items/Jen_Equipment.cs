@@ -13,7 +13,7 @@ public class Jen_Equipment : Jen_Item
     public override void Use()
     {
         base.Use();
-        // Equip the item
+        Jen_EquipmentManager.instance.Equip(this);
         // Remove it from the inventory
     }
 }
