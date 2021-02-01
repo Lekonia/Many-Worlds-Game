@@ -14,7 +14,7 @@ public class Jen_Equipment : Jen_Item
     {
         base.Use();
         Jen_EquipmentManager.instance.Equip(this);
-        // Remove it from the inventory
+        RemoveFromInventory();
     }
 }
 
