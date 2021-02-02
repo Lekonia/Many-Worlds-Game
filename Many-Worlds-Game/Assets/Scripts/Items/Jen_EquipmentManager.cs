@@ -50,6 +50,8 @@ public class Jen_EquipmentManager : MonoBehaviour
             onEquipmentChanged.Invoke(newItem, oldItem);
         }
 
+        SetEquipmentBlendShapes(newItem, 100);
+
         currentEquipment[slotIndex] = newItem;
         SkinnedMeshRenderer newMesh = Instantiate<SkinnedMeshRenderer>(newItem.mesh);
         newMesh.transform.parent = targetMesh.transform;
@@ -70,6 +72,7 @@ public class Jen_EquipmentManager : MonoBehaviour
             }
 
             Jen_Equipment oldItem = currentEquipment[slotIndex];
+            SetEquipmentBlendShapes(oldItem, 0);
             inventory.Add(oldItem);
 
             currentEquipment[slotIndex] = null;
@@ -86,6 +89,14 @@ public class Jen_EquipmentManager : MonoBehaviour
         for (int i = 0; i <currentEquipment.Length; i++)
         {
             Unequip(i);
+        }
+    }
+
+    void SetEquipmentBlendShapes(Jen_Equipment item, int weight)
+    {
+        foreach (EquipmentMeshRegion blendShape in item.coveredMeshRegions)
+        {
+            targetMesh.SetBlendShapeWeight((int)blendShape, weight);
         }
     }
 
