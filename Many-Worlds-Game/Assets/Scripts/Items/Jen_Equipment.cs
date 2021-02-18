@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Equipment", menuName = "Inventory/Equipment")]
 public class Jen_Equipment : Jen_Item
 {
+    public string tagName;
     public EquipmentSlot equipSlot;
     public SkinnedMeshRenderer mesh;
     public EquipmentMeshRegion[] coveredMeshRegions;
@@ -16,7 +17,7 @@ public class Jen_Equipment : Jen_Item
     public override void Use()
     {
         base.Use();
-        Jen_EquipmentManager.instance.Equip(this);
+        Jen_EquipmentManager.instance.Equip(this, tagName);
         RemoveFromInventory();
     }
 }

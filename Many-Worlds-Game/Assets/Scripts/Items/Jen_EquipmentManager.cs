@@ -33,7 +33,7 @@ public class Jen_EquipmentManager : MonoBehaviour
         currentMeshes = new SkinnedMeshRenderer[numSlots];
     }
 
-    public void Equip (Jen_Equipment newItem)
+    public void Equip (Jen_Equipment newItem, string grabPoint)
     {
         int slotIndex = (int)newItem.equipSlot;
 
@@ -54,10 +54,13 @@ public class Jen_EquipmentManager : MonoBehaviour
 
         currentEquipment[slotIndex] = newItem;
         SkinnedMeshRenderer newMesh = Instantiate<SkinnedMeshRenderer>(newItem.mesh);
-        newMesh.transform.parent = targetMesh.transform;
+        var go = GameObject.FindGameObjectWithTag(grabPoint);
+        newMesh.transform.parent = go.transform;
+        newMesh.transform.localPosition = Vector3.zero;
+        newMesh.transform.localEulerAngles = Vector3.zero;
 
-        newMesh.bones = targetMesh.bones;
-        newMesh.rootBone = targetMesh.rootBone;
+        //newMesh.bones = targetMesh.bones;
+        //newMesh.rootBone = targetMesh.rootBone;
         currentMeshes[slotIndex] = newMesh;
     }
 
