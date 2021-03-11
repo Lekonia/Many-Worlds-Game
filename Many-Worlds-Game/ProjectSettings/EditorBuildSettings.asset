@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/TSM/Main_Menu/Main_Menu.unity
+    guid: 4c441330b19eeaa48bbd7ef78f5d0825
+  - enabled: 1
+    path: Assets/Scenes/TSM/The_Museum/The_Museum.unity
+    guid: 01900632e24a0ef479aedbf006e9f65a
   m_configObjects: {}
